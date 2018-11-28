@@ -1,16 +1,14 @@
 # Syscoin-Ubuntu-Docker-generator
 
-# Requirements
+### Requirements
  - Node.js
  - Docker
  - Git
 
-# Build
-
->Install
+### Install
 `npm install`
 
->Build docker images
+### Build Docker Images
 ```
 BRANCH=<syscoin-github-branch> npm run start
 
@@ -19,7 +17,7 @@ BRANCH=<syscoin-github-branch> npm run start
 BRANCH=dev-3.x-prep-3.1.5 npm run start
 ```
 
-# Please note that to deploy the image to the DockerHub, you'll need to be part of the https://hub.docker.com/u/blockchainfoundrylabs/ organization.
+>Please note that to deploy the image to the DockerHub, you'll need to be part of the https://hub.docker.com/u/blockchainfoundrylabs/ organization.
 
-# Run
+### Run
 `docker run --name syscoin -it -p 8336:8336 syscoin-ubuntu-run`
