@@ -1,0 +1,19 @@
+FROM ubuntu:xenial
+RUN apt-get update && apt-get upgrade -y && apt-get install -y git \
+                                                                make \
+                                                                file \
+                                                                autoconf \
+                                                                automake \
+                                                                autotools-dev \
+                                                                bsdmainutils \
+                                                                build-essential \
+                                                                libtool \
+                                                                libssl-dev \
+                                                                libevent-dev \
+                                                                pkg-config \
+                                                                libboost-all-dev \
+                                                                software-properties-common
+
+RUN add-apt-repository -y ppa:bitcoin/bitcoin && apt-get update -y && apt-get install -y libdb4.8-dev \
+                                                                                         libdb4.8++-dev \
+                                                                                         libzmq3-dev

@@ -1,0 +1,7 @@
+FROM syscoin-ubuntu-build
+
+RUN (cd syscoin  && ./autogen.sh && \
+                    ./configure --without-gui \
+                    --with-incompatible-bdb && \
+                    make -j$(nproc) -pipe && \
+                    make install )

@@ -1,0 +1,2 @@
+run/data/chainstate/**/* filter=lfs diff=lfs merge=lfs -text
+run/data/blocks/**/* filter=lfs diff=lfs merge=lfs -text

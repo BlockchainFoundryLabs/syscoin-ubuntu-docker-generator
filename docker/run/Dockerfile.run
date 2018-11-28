@@ -1,0 +1,15 @@
+FROM syscoin-ubuntu-bin as build
+
+RUN echo "In build stage"
+
+FROM ubuntu-dev
+
+COPY --from=build /usr/local/bin/syscoind /usr/local/bin
+
+COPY data /data
+
+EXPOSE 8336/tcp
+
+ENTRYPOINT ["/usr/local/bin/syscoind"]
+
+CMD ["-datadir=/data", "-printtoconsole"]
