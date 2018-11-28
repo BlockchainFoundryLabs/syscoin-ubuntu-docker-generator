@@ -8,8 +8,8 @@ module.exports = async function releaseDockerRunImage(branch) {
         const dockerImageIdSplit = dockerImageIdRaw.stdout.split(':');
         const dockerImageId = dockerImageIdSplit[1].substring(0, 12);
 
-        await exeCmd(`docker tag ${dockerImageId} blockchainfoundrylabs/syscoin-ubuntu-run:${branch}`);
-        await exeCmd('docker push blockchainfoundrylabs/syscoin-ubuntu-run');
+        await exeCmd(`docker tag ${dockerImageId} blockchainfoundryinc/syscoin-ubuntu-run:${branch}`);
+        await exeCmd('docker push blockchainfoundryinc/syscoin-ubuntu-run');
 
     } catch (err) {
         err.message = `Something went horribly wrong during release of the syscoin-ubuntu-run Docker image file`;
